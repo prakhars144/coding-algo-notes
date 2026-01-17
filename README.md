@@ -1,44 +1,49 @@
 # Coding Algo Notes
 
-This is a Hugo website with the Hextra theme containing my personal algorithm notes.
+A simple Python Flask server that serves Markdown notes from the `notes/` folder.
 
 ## Setup
 
-1. Install Hugo (if not already installed):
+1. Install dependencies:
    ```bash
-   # On Ubuntu/Debian
-   sudo apt update && sudo apt install hugo
-
-   # Or download from https://gohugo.io/getting-started/installing/
+   pip install -r requirements.txt
    ```
 
-2. Add the Hextra theme:
+2. Run the server:
    ```bash
-   git submodule add https://github.com/imfing/hextra.git themes/hextra
+   python app.py
    ```
 
-3. Build the site:
-   ```bash
-   hugo
-   ```
+3. Open your browser to `http://localhost:5000`
 
-4. Serve locally:
-   ```bash
-   hugo server
-   ```
+## Structure
 
-The site will be available at `http://localhost:1313`
+- `notes/`: Folder containing all Markdown files (supports subfolders)
+- `app.py`: Flask server
+- `requirements.txt`: Python dependencies
 
-## Content
+## Adding Notes
 
-- Home page: Introduction
-- Dijkstra Algorithm: Complete notes on Dijkstra's algorithm
+Place your `.md` files in the `notes/` directory. Subfolders are supported. The server will automatically list all files on the index page.
+
+Example:
+```
+notes/
+├── dijkstra.md
+├── graphs/
+│   ├── bfs.md
+│   └── dfs.md
+└── sorting/
+    └── quicksort.md
+```
+
+## Features
+
+- Automatic listing of all Markdown files
+- Recursive folder support
+- Clean HTML rendering with syntax highlighting
+- Navigation back to index
 
 ## Deployment
 
-You can deploy this to Vercel, Netlify, or any static site host.
-
-For Vercel:
-- Connect your GitHub repo
-- Set build command: `hugo`
-- Set output directory: `public`
+Deploy to any Python-supporting platform like Vercel, Heroku, or Railway.
