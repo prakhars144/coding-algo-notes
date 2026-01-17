@@ -1,4 +1,5 @@
 {
+  "installCommand": "wget https://github.com/gohugoio/hugo/releases/download/v0.152.2/hugo_extended_0.152.2_linux-amd64.tar.gz && tar -xzf hugo_extended_0.152.2_linux-amd64.tar.gz && chmod +x hugo && sudo mv hugo /usr/local/bin/",
   "buildCommand": "git submodule update --init --recursive && hugo",
   "outputDirectory": "public",
   "framework": null
